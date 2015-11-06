@@ -12,8 +12,38 @@
 
 \section{Introducción}
 
-Las simulaciones cosmológicas han resultado ser de gran utilidad en las últimas décadas como un mecanismo para realizar predicciones acerca de la estructura del universo tanto a gran escala como a pequeña escala, permitiendo así obtener resultados que pueden ser sometidos a comparación con las observaciones astronómicas realizadas. Uno de los resultados más importantes acerca del análisis de esta estructura es que tanto las observaciones astronómicas como las simulaciones, muestran una estructura cosmológica bien definida, la cual se conoce como “cosmic web”, la cual cuenta con elementos estructurales definidos según sus características geométricas, siendo estos: vacíos, filamentos, hojas y nudos. Así pues, el estudio de las características morfológicas de esta red y de su evolución temporal han resultado un tema de estudio de alto impacto en la astrofísica moderna.
+Las simulaciones cosmológicas han sido de gran utilidad en 
+las últimas décadas para predecir la distribuci\'on de materia 
+en el universo a grandes escalas.
+Los resultados des simulaciones pueden ser comparados
+directamente con las observaciones astron\'omicas de la distribuci\'on
+de galaxias. 
+Tanto las observaciones astronómicas como las simulaciones muestran
+una estructura cosmológica bien definida la cual se conoce como
+“cosmic web”, la cual cuenta con elementos 
+estructurales definidos según sus características geométricas como
+vacíos, filamentos, hojas y nudos.  
+Así pues, el estudio de las  características morfológicas de esta red
+son un tema de estudio de alto impacto en la astrofísica moderna. 
 
+En este trabajo se har\'a una caracterización de la red c\'osmica a
+en simulaciones cosmológicas de N-cuerpos. 
+El objetivo principal es el estudio de la evoluci\'on de la red
+c\'osmica en escalas de tiempo cosmol\'ogicas.
+La simulación cosmol\'ogica se hará con el c\'odigo Gadget [REF], 
+un estándar para la realización de simulaciones cosmológicas. GADGET
+est\'a desarrollado para trabajar en sistemas de cómputo de múltiples
+procesadores en paralelo, 
+
+
+Los datos obtenidos en la simulación se analizar\'an para caracterizar
+la red c\'osmica en el volumen simulado. 
+El an\'alisis  utiliza los valores propios del Hessiano del potencial
+gravitacional $\phi$ para clasificar localmente cada lugar de la
+simulaci\'on como un vac\'io, filamento, hoja o nudo.
+[ESTE CODIGO TAMBIEN ES PUBLICO \verb"https://github.com/astroandes/TV-web"]
+
+<<<<<<< HEAD
 Teniendo en cuenta lo anterior, en este trabajo pretendo realizar una caracterización de los elementos estructurales de la cosmic web nombrados anteriormente, a partir del análisis de los datos obtenidos al realizar una simulación cosmológica de N-cuerpos. 
 
 Para crear la simulación, haré uso del código GADGET-2\cite{Gadget}, creado por el profesor Dr. Volker Springel de la universidad de Heildeberg, Alemania. Este código, escrito en C, se ha convertido en un estándar para la realización de simulaciones cosmológicas y fue desarrollado para trabajar en sistemas de cómputo de múltiples procesadores en paralelo, lo cual permite optimizar el desempeño del programa para así lograr simulaciones con un número de partículas considerable.
@@ -23,11 +53,21 @@ Posteriormente, usaré los datos obtenidos a partir de la simulación para reali
 \section{Objetivo General}
 
 Realizar una caracterización de los elementos estructurales de la cosmic web (vacíos, filamentos, hojas y nudos) y su evolución temporal a partir de los datos generados por una simulación cosmológica realizada con el código GADGET-2.
+=======
+
+\section{Objetivo General}
+
+Realizar una caracterización de los elementos estructurales de la
+cosmic web (vacíos, filamentos, hojas y nudos) y su evolución temporal
+a partir de los datos generados por una simulación cosmológica
+realizada con el código GADGET2. 
+>>>>>>> 997183407a8e75101fc71e1a3df8ebfe8265dcf6
 
 \section{Objetivos Específicos}
 
 \begin{enumerate}
 
+<<<<<<< HEAD
 \item Familiarizarse con el uso de máquinas de computo de múltiples procesadores en paralelo. 
 \item Aprender a compilar y correr el código GADGET-2 para simulaciones de N-cuerpos.
 \item Realizar una simulación cosmológica, usando los parámetros cosmológicos definidos por las últimas observaciones astronómicas y usando el código GADGET-2.
@@ -35,11 +75,28 @@ Realizar una caracterización de los elementos estructurales de la cosmic web (v
 \item Clasificar cada punto espacial, dependiendo de los valores propios obtenidos, como: vacíos, filamentos, hojas o nudos.
 \item Analizar la evolución de la estructura observada en cada paso temporal.
 
+=======
+\item Familiarizarse con el uso de máquinas de c\'omputo de múltiples
+  procesadores en paralelo.  
+\item Aprender a compilar y correr el código GADGET2 para simulaciones
+  de N-cuerpos. 
+\item Realizar una simulación cosmológica, usando los parámetros
+  cosmológicos definidos por las últimas observaciones astronómicas y
+  usando el código GADGET2. 
+\item Evaluar el Hessiano del potencial gravitacional para cada punto
+  espacial y en cada paso temporal y encontrar los valores propios que
+  se encuentran por encima de un cierto umbral. 
+\item Clasificar cada punto espacial, dependiendo de los valores
+  propios obtenidos, como: vacíos, filamentos, hojas o nudos. 
+\item Analizar la evolución de la estructura observada en cada paso
+  temporal. 
+>>>>>>> 997183407a8e75101fc71e1a3df8ebfe8265dcf6
 \end{enumerate}
 
 
 \section{Metodología}
 
+<<<<<<< HEAD
 Esta será una monografía computacional en la cuál usaré el código GADGET-2 que ha sido desarrollado  para correr simulaciones cosmológicas en máquinas de múltiples procesadores paralelos, por lo tanto, es necesario tener acceso al cluster de la universidad como primera medida. Adicionalmente, y aunque no es indispensable, requeriré acceso al laboratorio computacional de ciencias ubicado en el salón Q406.
 
 La primera etapa del trabajo se centrará en familiarizarme con las herramientas tecnológicas necesarias para la elaboración de la simulación. Lo anterior corresponderá a aprender acerca del manejo de sistemas de cómputo de múltiples procesadores en paralelo, en específico, obtener acceso al cluster de la universidad y a manejar su ambiente de programación. Adicionalmente, en esta etapa pretendo obtener un conocimiento básico del funcionamiento del código GADGET-2 que será usado para la simulación cosmológica a partir de la cual se generarán los datos. Para familiarizarme con el programa, correré simulaciones sencillas las cuales vienen incluidas en la documentación del código, tales como colisiones de galaxias, colapso de nubes de gas, entre otras. 
@@ -47,6 +104,45 @@ La primera etapa del trabajo se centrará en familiarizarme con las herramientas
 Posteriormente, y una vez halla obtenido un entendimiento adecuado del funcionamiento de GADGET-2, procederé a realizar la simulación cosmológica necesaria para el análisis estructural de los elementos de la cosmic web. Como se mencionó anteriormente, el análisis consistirá en calcular los valores propios del Hessiano del potencial gravitacional evaluado en cada punto espacial con el fin de determinar las características geométricas de cada uno de ellos y así clasificarlos como vacíos, filamentos, hojas o nudos.
 
 Finalmente, realizaré el análisis comentado anteriormente para cada paso temporal con propósito de tener una imagen de la evolución temporal de estas estructuras y de su aporte a la morfológica de la cosmic web. En esta última etapa haré comparaciones con datos de otras simulaciones y de observaciones astronómicas con el fin de corroborar que la estructura obtenida en este estudio corresponde con la estructura cosmológica observada.         
+=======
+Esta será una monografía computacional. Utilizar\'e el código
+GADGET2 qpara correr simulaciones cosmológicas en máquinas de
+múltiples procesadores paralelos, por lo tanto, es necesario tener
+acceso al cluster de la universidad como primera
+medida. Adicionalmente, y aunque no es indispensable, se requerirá
+acceso al laboratorio computacional de ciencias ubicado enel salón
+Q406.  
+  
+La primera etapa del trabajo se centrará en familiarizarse con las
+herramientas tecnológicas necesarias para la elaboración de la
+simulación. Lo anterior corresponderá a familiarizarse con el manejo
+de sistemas de cómputo de múltiples procesadores en paralelo, en
+específico, obtener acceso al cluster de la universidad y a manejar su
+ambiente de programación. Adicionalmente, en esta etapa se pretende
+obtener un conocimiento básico del funcionamiento del código GADGET2
+que será usado para la simulación cosmológica a partir de la cual se
+generarán los datos. Para familiarizarse con el programa, se harán
+simulaciones sencillas las cuales vienen incluidas en la documentación
+del código, tales como colisiones de galaxias, colapso de nubes de
+gas, entre otras.  
+
+Posteriormente, y una vez se haya obtenido un entendimiento adecuado
+del funcionamiento de GADGET2, se procederá a realizar la simulación
+cosmológica necesaria para el análisis estructural de los elementos de
+la cosmic web. Como se mencionó anteriormente, el análisis consistirá
+en calcular los valores propios del Hessiano del potencial
+gravitacional evaluado en cada punto espacial con el fin de determinar
+las características geométricas de cada uno de ellos y así
+clasificarlos como vacíos, filamentos, hojas o nudos. 
+
+Finalmente, se realizará el análisis comentado anteriormente para cada
+paso temporal con propósito de tener una imagen de la evolución
+temporal de estas estructuras y de su aporte a la morfológica de la
+cosmic web. En esta última etapa se realizarán comparaciones con datos
+de otras simulaciones y de observaciones astronómicas con el fin de
+corroborar que la estructura obtenida en este estudio corresponde con
+la estructura cosmológica observada.          
+>>>>>>> 997183407a8e75101fc71e1a3df8ebfe8265dcf6
 
 
 \section{Cronograma}
