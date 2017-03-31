@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from pylab import *
 
 
-m_voids, m_sheets, m_fils, m_knots = [], [], [], []
+mff_voids, mff_sheets, mff_fils, mff_knots = [], [], [], []
 
 def read_CIC_scalar(filename):
     f = open(filename, "rb")
@@ -67,24 +67,31 @@ def classify(file1, file2, file3, lambda_th):
     fil = np.where(chespirito == 2)
     knot = np.where(chespirito == 3)
     
-    rho_void = sum(rho[void])
-    rho_sheet = sum(rho[sheet])
-    rho_fil = sum(rho[fil])
-    rho_knot = sum(rho[knot])
+    m_void = sum(rho[void])*(np.shape(void)[1]/128.0**3)
+    m_sheet = sum(rho[sheet])*(np.shape(sheet)[1]/128.0**3)
+    m_fil = sum(rho[fil])*(np.shape(fil)[1]/128.0**3)
+    m_knot = sum(rho[knot])*(np.shape(knot)[1]/128.0**3)
+    m_tot = m_void + m_sheet + m_fil + m_knot
 
 #    print rho_void
 
 #    print void
 
-    m_voids.append((np.shape(void)[1]/128.0**3)*rho_void)
-    m_sheets.append((np.shape(sheet)[1]/128.0**3)*rho_sheet)
-    m_fils.append((np.shape(fil)[1]/128.0**3)*rho_fil)
-    m_knots.append((np.shape(knot)[1]/128.0**3)*rho_knot)
+    mff_voids.append(m_void/m_tot)
+    mff_sheets.append(m_sheet/m_tot)
+    mff_fils.append(m_fil/m_tot)
+    mff_knots.append(m_knot/m_tot)
     
 
 #filein="/store/04/bolshoi/V-web/clues/256/snap_190.CIC.s8.00.eigen_1"
 #eigen_1 = read_CIC_scalar(filein)
 
+t = [0.090909091]
+for i in range(30):
+    t.append(t[i]*1.083211069549)
+
+a = np.array(t)
+z = 1/a - 1
 
 for i in range(0,31,1):
     if (i<10):
@@ -105,17 +112,10 @@ for i in range(0,31,1):
         classify(file1, file2, file3, 0.0)
 
 
-t = [0.090909091]
-for i in range(30):
-    t.append(t[i]*1.083211069549)
-
-a = np.array(t)
-z = 1/a - 1
-
-plt.plot(z,m_voids, 'bo', label='Voids')
-plt.plot(z,m_sheets, 'r--', label='Sheets')
-plt.plot(z,m_fils, 'ys', label='Filaments')
-plt.plot(z,m_knots, 'g^', label='Knots')
+plt.plot(z,mff_voids, 'bo', label='Voids')
+plt.plot(z,mff_sheets, 'r--', label='Sheets')
+plt.plot(z,mff_fils, 'ys', label='Filaments')
+plt.plot(z,mff_knots, 'g^', label='Knots')
 plt.gca().invert_xaxis()
 plt.xlim(z[0],0)
 plt.legend(bbox_to_anchor=(0.7,1))
